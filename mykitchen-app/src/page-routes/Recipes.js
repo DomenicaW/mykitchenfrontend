@@ -12,7 +12,7 @@ import AddRecipe from "../page-routes/AddNew.js";
 let baseURL = "";
 
 if (process.env.NODE_ENV ==="development") {
-    baseURL = "http://localhost:3000";
+    baseURL = "http://localhost:3000/";
 } else {
   baseURL = "http://localhost:3000/recipes";
 
@@ -55,19 +55,21 @@ class Recipes extends Component {
           copyRecipes.unshift(recipe);
           this.setState({
             recipes: copyRecipes,
-            _id: "",
+            id: "",
             name: "",
           image: "",
           description: "",
           duration: "",
         });
+
       };
 //-----------------
       handleDelete = (id) => {
         console.log("delete button responds", id);
-        fetch(`${process.env.REACT_APP_BACKEND_URL}` + '/' + id, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}` + '/' + id , {
           method: "DELETE",
         })
+        .then(window.location.href="/recipes")
         .then(response => {
           const findIndex = this.state.recipes.findIndex(recipe => recipe._id === id);
           const copyRecipes = [...this.state.recipes];
@@ -90,7 +92,7 @@ class Recipes extends Component {
             description={recipe.description}
             duration={recipe.description}
             ></RecipeCard>
-            <button className="deleteButton" onClick={() => this.handleDelete(recipe._id)}> Delete </button>
+            <button className="deleteButton" onClick={() => this.handleDelete(recipe._id)}> Delete {recipe.name}</button>
             </>
           ))}
           </>

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 
 class AddRecipe extends Component {
+
     constructor(props) {
       super(props);
         this.state = {
@@ -13,16 +14,16 @@ class AddRecipe extends Component {
       }
 
       handleChange = event => {
-        const target = event.target;
+        // const target = event.target;
 
         this.setState({
-          [event.target.name]: event.target.value,
+          [event.target.id]: event.target.value,
         });
       };
 
       handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
+        fetch(process.env.REACT_APP_BACKEND_URL , {
           method: 'POST',
           body: JSON.stringify({
             name: this.state.name,
@@ -35,24 +36,27 @@ class AddRecipe extends Component {
           },
         })
         .then(res => res.json())
-
         .then(resJson => {
-          this.props.handleAddRecipe(resJson);
+          this.props.handleAddRecipe(resJson.recipes);
           this.setState({
             name: "",
             image: "",
             description: "",
             duration: "",
           });
+
+          this.props.closeMOdal()
         })
+
         .catch(error => console.error({ Error: error }));
+
       };
 
       render() {
         return (
           <>
           <div className= "new-form">
-        
+
           <h2> New Recipe </h2>
 
           <form onSubmit={this.handleSubmit}>

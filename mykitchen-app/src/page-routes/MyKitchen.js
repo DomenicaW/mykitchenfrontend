@@ -7,6 +7,7 @@ import RecipeCard from "../components/RecipeCard.js";
 import '../css-sheets/index.css';
 
 let baseURL = "";
+baseURL = `${process.env.REACT_APP_BACKEND_URL}`
 
 if (process.env.NODE_ENV === "development") {
     baseURL = "http://localhost:3000";
@@ -20,7 +21,7 @@ class Mykitchen extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        
+
       }
     }
 }

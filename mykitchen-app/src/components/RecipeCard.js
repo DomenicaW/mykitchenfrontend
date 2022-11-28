@@ -11,7 +11,7 @@ class RecipeCard extends Component {
       super(props);
       this.state = {
         recipes: [],
-        id: []
+        _id: []
       };
     }
 
@@ -21,6 +21,7 @@ class RecipeCard extends Component {
     render() {
       console.log("id", this.state._id);
       return (
+        <>
         <div key = {this.props.id} className="RecipeSquare">
         <div className="ImageCard">
         <img src= {this.props.image} alt="Recipe Image" />
@@ -29,9 +30,13 @@ class RecipeCard extends Component {
 
 
         <h3 className="RecipeName"> {this.props.name}</h3>
+        <h5 className="recipeDescription"> {this.props.description}</h5>
+        <h3 className="recipeDuration"> {this.props.duration}</h3>
         // <button className="newButton">New Recipe</button>
         <a href="/recipes/new">New Recipe</a>
         </div>
+
+        </>
       );
     }
 
