@@ -24,9 +24,8 @@ class Recipes extends Component {
 
     constructor(props) {
       super(props);
-
-        this.state ={
-          recipes: []
+        this.state = {
+          recipes: [],
         };
       }
 
@@ -58,7 +57,7 @@ class Recipes extends Component {
             recipes: copyRecipes,
             _id: "",
             name: "",
-          imsge: "",
+          image: "",
           description: "",
           duration: "",
         });
@@ -85,7 +84,7 @@ class Recipes extends Component {
           {this.state.recipes.map(recipe => (
             <>
             <RecipeCard
-            key={recipe._Id}
+            key={recipe._id}
             name={recipe.name}
             image={recipe.image}
             description={recipe.description}
@@ -120,6 +119,6 @@ class Recipes extends Component {
     //       </main>
     //       </>
 
-    
+
 
 export default Recipes;

@@ -50,7 +50,9 @@ class AddRecipe extends Component {
 
       render() {
         return (
+          <>
           <div className= "new-form">
+        
           <h2> New Recipe </h2>
 
           <form onSubmit={this.handleSubmit}>
@@ -88,6 +90,7 @@ class AddRecipe extends Component {
               </form>
 
               </div>
+              </>
         );
       }
     }

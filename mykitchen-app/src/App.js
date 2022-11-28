@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Routes, Outlet, Link} from 'react-router-dom';
+import {Route, Routes, Outlet, Link, NavLink} from 'react-router-dom';
 // import logo from './logo.svg';
 
 
@@ -28,7 +28,7 @@ class App extends Component {
     constructor(props) {
       super(props);
       this.state={
-        recipes: []
+        recipes: [],
       };
     }
     render(){
@@ -36,8 +36,12 @@ class App extends Component {
 
       return (
         <>
+        <RecipeCard />
+
         <Routes>
-        <Route path="/" element={<Recipes />} />
+        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/recipes" element={<App />} />
+        <Route path="/recipes/new" element={<AddRecipe />} />
 
         </Routes>
         </>
