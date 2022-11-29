@@ -8,6 +8,10 @@ Mongoose
 Express
 Reactjs
 Nodejs
+
+Link to wireframe:https://www.figma.com/file/1tUpHj7IFjlDWAJhTOfbIZ/My-Kitchen?node-id=0%3A1&t=4WFLkUG7t8qHEiKY-0
+Link to front end github: https://github.com/DomenicaW/mykitchenfrontend/tree/main/mykitchen-app
+Link to Back end github: https://github.com/DomenicaW/mykitchenbackend
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
