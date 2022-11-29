@@ -3,7 +3,7 @@ import {Route, Routes, NavLink, Link, Outlet} from "react-router-dom";
 
 import RecipeCard from "../components/RecipeCard.js";
 import AddRecipe from "../page-routes/AddNew.js";
-
+// import ShowCard from "../components/Edit.js";
 //styling import goes here:
 // import ".."
 
@@ -52,17 +52,31 @@ class Recipes extends Component {
 //----------------
         handleAddRecipe = (recipe) => {
           const copyRecipes = [...this.state.recipes];
+          const copyName=[...this.state.name];
           copyRecipes.unshift(recipe);
           this.setState({
             recipes: copyRecipes,
-            id: "",
-            name: "",
+            id: '',
+            name: copyName,
           image: "",
           description: "",
           duration: "",
         });
 
       };
+      handleEdit = (event)=> {
+        event.preventDefault()
+      };
+
+      passRecipeData = (showCard) => {
+        this.setState({showCard: {
+          id:showCard.id,
+          name:showCard.name,
+          image:showCard.image,
+          description:showCard.description,
+          duration: showCard.duration,
+        }})
+      }
 //-----------------
       handleDelete = (id) => {
         console.log("delete button responds", id);
@@ -79,20 +93,38 @@ class Recipes extends Component {
       };
 //------------------
 
+      handleChange = (id) => {
+        fetch(`${process.env.REACT_APP_BACKEND_URL} /${id}`, {
+          methood: "PUT",
+        })
+        .then(window.location.href=`/recipes/edit/${id}`)
+        .then(response => {
+          const findIndex = this.state.recipes.findIndex(recipe => recipe._id === id);
+          const copyRecipes = [...this.state.recipes];
+          copyRecipes.splice(findIndex, 1);
+          this.setState({recipes: copyRecipes});
+        });
+      };
+
+//--------------------
       render(){
-        console.log(this.state.recipes);
+        console.log(this.state.recipes, this.state.recipes);
+        console.log()
         return (
           <>
           {this.state.recipes.map(recipe => (
             <>
             <RecipeCard
-            key={recipe._id}
+            // key={recipe._id}
             name={recipe.name}
             image={recipe.image}
-            description={recipe.description}
-            duration={recipe.description}
+            // description={recipe.description}
+            // duration={recipe.description}
+            // used={recipe.used}
             ></RecipeCard>
+
             <button className="deleteButton" onClick={() => this.handleDelete(recipe._id)}> Delete {recipe.name}</button>
+            <button className="editButton" onClick={() => this.handleChange(recipe._id)}> View Recipe: {recipe.name}</button>
             </>
           ))}
           </>

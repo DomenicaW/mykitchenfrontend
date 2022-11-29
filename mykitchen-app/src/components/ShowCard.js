@@ -6,9 +6,7 @@ import AddRecipe from "../page-routes/AddNew";
 // import App from "../page-routes/Mykitchen/js";
 import Recipes from "../page-routes/Recipes.js";
 
-
-
-class RecipeCard extends Component {
+class ShowItCard extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -25,10 +23,8 @@ class RecipeCard extends Component {
       return (
 
         <>
-
-
         <div className= "redirectlinks">
-        <a href="/recipes/new">New Recipe</a>
+        <a href="/recipes/new">New Recipes</a>
         <br>
         </br>
 
@@ -42,9 +38,12 @@ class RecipeCard extends Component {
 
 
 
-        <h1 className="RecipeName"> {this.props.name}</h1>
-        <h3 className="RecipeDescription">{this.props.description}</h3>
-
+        <h3 className="RecipeName"> {this.props.name}</h3>
+        // <h5 className="recipeDescription"> {this.props.description}</h5>
+        // <h3 className="recipeDuration"> {this.props.duration}</h3>
+        // <button className="newButton">New Recipe</button>
+        // <a href="/recipes/new">New Recipes</a>
+        // <a href="/recipes"> Back to My Kitchen</a>
         </div>
 
         </>
@@ -59,4 +58,4 @@ class RecipeCard extends Component {
 
 
 
-export default RecipeCard;
+export default ShowItCard;

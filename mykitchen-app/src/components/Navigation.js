@@ -10,7 +10,7 @@ class Nav extends Component {
         <div className= "NavLinks">
         <nav>
         <ul>
-        <Link className="Link" to ='./new'> New Recipe </Link>
+        <Link className="Link" to ='./new'> New Recipes</Link>
         </ul>
         </nav>
         </div>

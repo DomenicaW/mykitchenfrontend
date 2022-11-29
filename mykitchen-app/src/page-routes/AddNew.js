@@ -12,12 +12,12 @@ class AddRecipe extends Component {
           duration: "",
         };
       }
-
+      
       handleChange = event => {
         // const target = event.target;
 
         this.setState({
-          [event.target.id]: event.target.value,
+          [event.target.name]: event.target.value,
         });
       };
 
@@ -37,7 +37,7 @@ class AddRecipe extends Component {
         })
         .then(res => res.json())
         .then(resJson => {
-          this.props.handleAddRecipe(resJson.recipes);
+          this.props.handleSubmit(resJson.recipes);
           this.setState({
             name: "",
             image: "",
@@ -45,7 +45,7 @@ class AddRecipe extends Component {
             duration: "",
           });
 
-          this.props.closeMOdal()
+          // this.props.closeMOdal()
         })
 
         .catch(error => console.error({ Error: error }));
@@ -70,10 +70,7 @@ class AddRecipe extends Component {
             <label htmlFor="name">Name</label>
             </div>
 
-            <div className="input-box">
-              <input type="text" id="name" name="type" onChange={this.handleChange} value={this.state.type} placeholder="Enter Text Here" />
-              <label htmlFor="type">Name</label>
-              </div>
+
 
               <div className="input-box">
               <input type="text" id="name" name="image" onChange={this.handleChange} value={this.state.image} placeholder="Link to image here" />
@@ -88,6 +85,21 @@ class AddRecipe extends Component {
               <div className="input-box">
               <input type="text" id="name" name="duration" onChange={this.handleChange} value={this.state.duration} placeholder="How long will it take?" />
               <label htmlFor="duration">Total Time</label>
+              </div>
+
+              <div className="input-toggle">
+              <input type="radio" id="name" name="checkbox" onChange={this.handleChange} value={this.state.used}/>
+              <label for="check1">No Diet Restrictions</label>
+              </div>
+
+              <div className="input-toggle">
+              <input type="radio" id="name" name="checkbox" onChange={this.handleChange} value={this.state.used}/>
+              <label for="check2">Vegetarian </label>
+              </div>
+
+              <div className="input-toggle">
+              <input type="radio" id="name" name="checkbox" onChange={this.handleChange} />
+              <label for="check3">Not sure </label>
               </div>
 
               <input type="submit" value="Submit Recipe" />
