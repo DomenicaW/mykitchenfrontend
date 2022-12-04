@@ -54,7 +54,9 @@ class App extends Component {
 
       return (
         <>
+        <h1 className="app-name">My Kitchen</h1>
         <div className="myApp">
+
         <RecipeCard />
 
         <Routes>

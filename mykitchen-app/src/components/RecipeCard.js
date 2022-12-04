@@ -23,7 +23,7 @@ class RecipeCard extends Component {
     render() {
       console.log("id", this.state._id);
       return (
-
+        
         <>
 
 
@@ -41,7 +41,7 @@ class RecipeCard extends Component {
         </div>
         <br>
         </br>
-        
+
         <div key = {this.props.id} className="RecipeSquare">
         <div className="ImageCard">
         <img src= {this.props.image} alt="Recipe Image" />

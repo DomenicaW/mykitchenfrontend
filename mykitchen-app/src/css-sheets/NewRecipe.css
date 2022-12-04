@@ -41,3 +41,10 @@
   padding: 15px
 
 }
+.app-name {
+  font-size: 80px;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-shadow: 2px 2px 4px;
+  text-transform: lowercase;
+  text-align: center;
+}
