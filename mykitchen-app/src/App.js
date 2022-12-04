@@ -7,6 +7,7 @@ import './App.css';
 import "./css-sheets/index.css";
 import "./css-sheets/RecipeCard.css";
 import "./css-sheets/Edit.css";
+import "./css-sheets/NewRecipe.css";
 
 //Components
 import Nav from "./components/Navigation.js";

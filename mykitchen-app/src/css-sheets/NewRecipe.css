@@ -1,0 +1,43 @@
+.new-form {
+  margin: auto;
+  width: 600px;
+  padding: 70px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 30px;
+  border-radius: 80px;
+  height: 900px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 40px;
+  margin-right: 550px;
+  background-color: #d6ce98;
+}
+.input-box {
+  padding: 5px;
+  font-size: 28px;
+  margin: 5px;
+  /* box-shadow: 0 0 15px 4px; */
+  border-radius: 10px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+.my-kitchen {
+  color: #5a839e;
+  background-color: #d6ce98;
+  border: 5px solid #5a839e;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 80px;
+  padding: 15px
+}
+.new-recipe-button{
+  color: #5a839e;
+  background-color: #d6ce98;
+  border: 5px solid #5a839e;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 80px;
+  padding: 15px
+
+}

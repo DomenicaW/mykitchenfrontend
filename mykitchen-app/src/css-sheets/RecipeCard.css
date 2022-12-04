@@ -1,17 +1,24 @@
 .RecipeSquare {
-  width: 200px;
-  height: 500px;
-  margin: 25px;
-  border-radius: 40px;
+  width: 285px;
+  height: 450px;
+  margin: 60px;
+  border-radius: 80px;
+  box-shadow: 0 20px 30px;
+  float: left;
+  justify-content: center;
+  background-color: #d6ce98;
 
 }
 .RecipeSquare button {
   background-color: white;
-  height: 35px;
+  height: 40px;
   width: 80px;
 
 }
 
 .RecipeSquare button:focus {
   border: none;
+}
+.deleteButton {
+  float: auto;
 }

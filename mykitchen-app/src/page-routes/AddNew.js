@@ -12,7 +12,7 @@ class AddRecipe extends Component {
           duration: "",
         };
       }
-      
+
       handleChange = event => {
         // const target = event.target;
 
@@ -84,7 +84,7 @@ class AddRecipe extends Component {
 
               <div className="input-box">
               <input type="text" id="name" name="duration" onChange={this.handleChange} value={this.state.duration} placeholder="How long will it take?" />
-              <label htmlFor="duration">Total Time</label>
+              <label htmlFor="duration">Cook Time</label>
               </div>
 
               <div className="input-toggle">
@@ -101,8 +101,10 @@ class AddRecipe extends Component {
               <input type="radio" id="name" name="checkbox" onChange={this.handleChange} />
               <label for="check3">Not sure </label>
               </div>
+              <div className="submit-button">
 
               <input type="submit" value="Submit Recipe" />
+              </div>
               </form>
 
               </div>

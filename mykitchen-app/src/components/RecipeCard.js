@@ -28,13 +28,20 @@ class RecipeCard extends Component {
 
 
         <div className= "redirectlinks">
-        <a href="/recipes/new">New Recipe</a>
+        <a href="/recipes/new" className="new-recipe-button">New Recipe</a>
         <br>
         </br>
-
-        <a href="/recipes"> Back to My Kitchen</a>
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
+        <a href="/recipes" className="my-kitchen"> Back to My Kitchen</a>
         </div>
-
+        <br>
+        </br>
+        
         <div key = {this.props.id} className="RecipeSquare">
         <div className="ImageCard">
         <img src= {this.props.image} alt="Recipe Image" />

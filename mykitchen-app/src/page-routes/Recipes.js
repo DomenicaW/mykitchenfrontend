@@ -122,7 +122,7 @@ class Recipes extends Component {
             // duration={recipe.description}
             // used={recipe.used}
             ></RecipeCard>
-
+            
             <button className="deleteButton" onClick={() => this.handleDelete(recipe._id)}> Delete {recipe.name}</button>
             <button className="editButton" onClick={() => this.handleChange(recipe._id)}> View Recipe: {recipe.name}</button>
             </>

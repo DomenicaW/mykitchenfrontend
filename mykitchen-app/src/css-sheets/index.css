@@ -1,7 +1,11 @@
+
 body {
-  background-color: #9ec4ea;
-  margin: 100px;
-  padding: 10px;
+  /* background-color: #9ec4ea; */
+  background: url("https://www.transparenttextures.com/patterns/food.png"),  #5a839e;
+  /* margin: 20px; */
+  /* padding: 80px; */
   color: black;
-  
+  font-size: 15px;
+  margin: 100px;
+  padding: 100px
 }
